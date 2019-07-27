@@ -1,29 +1,42 @@
+/* a css element that targets the whole body of the page and gives it a font size of 18px and the font of arial, sans-serif as well as a background with the value of #eee */
 body {
   font: 18px arial, sans-serif;
   background: #eee;
 }
 
+/* css element that targets the animals id on the html page and gives the container a width of 70% */
 #animals {
   width: 70%;
 }
 
+/* css element that targets the animal-item class on the html page and gives the container a padding of 10px and a float left property */
+/* this makes the padding of the box all around 10px of padding */
+/* it also makes the box float as far left of the page as possible */
 .animal-item {
   float: left;
   padding: 10px;
 }
 
+/* a css element that targets a form tag on the html page and gives it a float right property and adds 20px of padding and gives it a width of 30% */
+/* this will make the box take up 30% of the total width of the page */
+/* also it will move as far to the right of the page as possible */
+/* and it will have a padding of 20px added to the box */
 form {
   float: right;
   width: 30%;
   padding: 20px;
 }
 
+/* a css element that targets a label tag on the html and gives it a property that will display it as a block element. it will also have a margin on the bottom of the box of 10px and a font-weight of 700 */
 label {
   display: block;
   margin-bottom: 10px;
   font-weight: 700;
 }
 
+/* this css element targets an input tag on the html that is a text box that will have a width of 100%, a height of 30px, a margin on the bottom of the box of 10px and a font size of 18px */
+/* the width will take up the whole amount of space it can in the container it resides in */
+/* the height will give the text box a height of 30px */
 input[type="text"] {
   width: 100%;
   height: 30px;
@@ -31,6 +44,16 @@ input[type="text"] {
   font-size: 18px;
 }
 
+/* a css element that targets the submit button and the input tag with a submit type */
+  /* it gives the html element padding consisting of 5px on the top and bottom and 20px on the left and right */
+  /* it adds a right and bottom margin of 10px */
+  /* adds a font size of 18px */
+  /* adds a color with a value of #fff */
+  /* changes the cursor so that it looks like a pointer instead of the arrow upon hover of the button */
+  /* adds a background with a value of #659a98 */
+  /* negates the border */
+  /* adds a border radius of 5px */
+  /* add a box shadow with a top, right, and bottom shadow of 2px, 2px, and 3px respectively with a color of #bbb */
 button,
 input[type="submit"] {
   padding: 5px 20px;
@@ -44,11 +67,14 @@ input[type="submit"] {
   box-shadow: 2px 2px 3px #bbb;
 }
 
+/* css element that targets when the user hovers over the button with the input type of submit */
+  /* this will change the color of the button upon hover to a value of #334e4d */
 button:hover,
 input[type="submit"]:hover {
   background: #334e4d;
 }
 
+/* a css element that targets the button clicked and keeps the background at the hover color */
 button.active {
   background: #334e4d;
 }
