@@ -3,28 +3,31 @@
 
 <head>
   <meta charset="UTF-8">
+  <!-- document title that will show up on the tab in the browser -->
   <title>Animaltastic</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- a link to the css style sheet called style.css that allows us to modify the html page from an outside source -->
+  <link rel="stylesheet" type="text/css" href="assets/style.css">
 </head>
 
 <body>
-
+<!-- html div tag with an id of animal-buttons that will be where the buttons will go -->
   <div id="animal-buttons">
 
   </div>
-
+<!-- a form that takes in text with an id of animal-input and a button with id of add-animal and a type and value of submit that will execute a function  -->
   <form id="animal-form">
     <label for="animal-input">Add an animal</label>
     <input type="text" id="animal-input"><br>
     <input id="add-animal" type="submit" value="Submit">
   </form>
-
+<!-- an empty div with an id of animals that that will be where the animal gifs will be placed upon click of the animal button -->
   <div id="animals">
 
   </div>
-
+<!-- the script source for the jquery library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="app.js"></script>
+  <!-- the link that allows us to access the outside javascript document and add javascript to the page -->
+  <script src="assets/game.js"></script>
   
 </body>
 </html>
