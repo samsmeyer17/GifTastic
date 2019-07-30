@@ -65,50 +65,73 @@ $(document).ready(function() {
           // create a variable called "p" that creates a new paragraph tag with text stating that the rating is stored in the rating variable
           var p = $("<p>").text("Rating: " + rating);
 
-          // 
+          // sets the gif url from the return of the ajax call to animated
           var animated = results[i].images.fixed_height.url;
+          // sets the still image version of the gif url from the return of the ajax call called results to a variable called still
           var still = results[i].images.fixed_height_still.url;
+          
 
+          // create a variable called animalImage that will create an image tag using jQuery
           var animalImage = $("<img>");
+          // add a source attribute to animalImage with a value of "still"
           animalImage.attr("src", still);
+          // add a data-still attribute to animalImage with a value of "still"
           animalImage.attr("data-still", still);
+          // add a data-animate attribute to animalImage with a value of "animated"
           animalImage.attr("data-animate", animated);
+          // add a data-state attribute with a string value of "still"
           animalImage.attr("data-state", "still");
+          // add a class to animalImage called animal-image
           animalImage.addClass("animal-image");
 
+          // append the new variable p (the variable with the paragraph tag with the rating) to the animalDiv (the variable that creates a div with a class of animal-item)
           animalDiv.append(p);
+          // append the animalImage variable to animalDiv.
           animalDiv.append(animalImage);
 
+          // append animalDiv to the html element with the id #animals
           $("#animals").append(animalDiv);
         }
       });
   });
 
+  // create a document on click event associated with the class animal-image that will run the following function:
   $(document).on("click", ".animal-image", function() {
-
+    // assign a variable to the data-state attribute of the image clicked on
     var state = $(this).attr("data-state");
 
+    // an if statement that, if the data-state attribute of the image is set to "still," then change the source of the data-state attribute to the data-animate attribute previously defined
+    // also, change the data-state attribute from still to animate 
+    // this if statement will cause the gif to animate if still
     if (state === "still") {
       $(this).attr("src", $(this).attr("data-animate"));
       $(this).attr("data-state", "animate");
     }
+    // an else statement that will activate assuming if the data state does not equal still then it equals animate so it will change the source of the data attribute to the data-still attribute
+    // also it will change the data-state attribute from animate to still
+    // this will cause the gif to pause and restart if it is animated
     else {
       $(this).attr("src", $(this).attr("data-still"));
       $(this).attr("data-state", "still");
     }
   });
 
+  // create an on click even that runs a function upon the click of the html element with an id of add-animal
   $("#add-animal").on("click", function(event) {
+    // set the event status to prevent default to avoid the refresh of the page upon click
     event.preventDefault();
+    // using jQuery, gather the value of the input from the index of 0 of the api object and set it equal to a variable called newAnimal 
     var newAnimal = $("input").eq(0).val();
 
+    // an if statement with a condition of if the length of the newAnimal variable is greater than 2 than push the value into the animals array previously defined in the global scope
     if (newAnimal.length > 2) {
       animals.push(newAnimal);
     }
 
+    // upon a click calls the populateButtons function using the array called animals adding a class called animal-button and adding this button to the html element with the id of animal-buttons
     populateButtons(animals, "animal-button", "#animal-buttons");
 
   });
-
+  // upon a click calls the populateButtons function using the array called animals adding a class called animal-button and adding this button to the html element with the id of animal-buttons
   populateButtons(animals, "animal-button", "#animal-buttons");
 });
